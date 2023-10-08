@@ -1,0 +1,39 @@
+<div class="mat-elevation-z8" tabindex="0">
+  <div class="login-container">
+    <div class="left">
+      <div class="logo">
+        <img src="../../../assets/images/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="right">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="form">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email" required>
+              <mat-error>{{getErrorMessage(email)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error>{{getErrorMessage(password)}}</mat-error>
+            </mat-form-field>
+            <button class="login-btn" mat-button (click)="login()" [disabled]="email.invalid || password.invalid"
+              [style.backgroundColor]="(email.invalid || password.invalid)? '#f8f8f8'  : ''"
+              >Login</button>
+            <a class="create-accoumpt" href="/signUp">Create an account</a>
+          </div>
+        </mat-card-content>
+        <!-- <mat-card-footer> Footer </mat-card-footer> -->
+      </mat-card>
+    </div>
+  </div>
+</div>

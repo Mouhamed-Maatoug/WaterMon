@@ -1,0 +1,30 @@
+.sidbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: width 0.4s ease;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    background-color: var(--gray-clair);
+    min-height: 100vh;
+    transition: 0.4s ease;
+
+}
+.header{
+    position: fixed;
+    top: 0;
+    width: inherit;
+    z-index: 10;
+}
+.view-wrapper {
+    padding: 30px;
+    height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px;
+    width: inherit;;
+    overflow-y: scroll;
+}

@@ -1,0 +1,17 @@
+<div class="sidbar" [style.width.px]="sidbarWidth()">
+
+    <app-sidbar></app-sidbar>
+  </div>
+  <div
+    class="content"
+    [style.left.px]="sidbarWidth()"
+    [style.width]="'calc(100% - ' + sidbarWidth() + 'px)'"
+  >
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="view-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

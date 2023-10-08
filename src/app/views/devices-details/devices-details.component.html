@@ -1,0 +1,73 @@
+
+
+<div class="scroll">
+  <div class="top">
+    <app-stat-card width="300" title="Temperature" icon='thermostat' value="26">
+    </app-stat-card>
+    <app-stat-card width="300" title="Humidity" icon='water_drop' value="42">
+    </app-stat-card>
+    <app-stat-card width="300" title="Status" icon='check_circle' [enableStatus]="true">
+    </app-stat-card>
+  </div>
+  <div class="content-center" style="gap: 20px;">
+    <div class="chart" style="background-color: #ffff; width: 50%;">
+
+      <dx-chart id="chart" [dataSource]="getComplaintsData()" title="Humidity" palette="Harmony ">
+
+        <dxi-value-axis name="percentage" position="right" [showZero]="true" [tickInterval]="20"
+          [valueMarginsEnabled]="false">
+          <dxo-label [customizeText]="customizeLabelText"></dxo-label>
+          <dxi-constant-line [value]="80" color="#fc3535" dashStyle="dash" [width]="2">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-constant-line>
+        </dxi-value-axis>
+
+
+        <dxo-common-series-settings argumentField="complaint">
+        </dxo-common-series-settings>
+
+        <dxi-series type="spline" valueField="cumulativePercent" axis="percentage" name="humiduty %" color="#6b71c3">
+        </dxi-series>
+        <dxo-legend verticalAlignment="top" horizontalAlignment="center">
+        </dxo-legend>
+      </dx-chart>
+    </div>
+    <div class="chart" style="background-color: #ffff; width: 50%;">
+
+      <dx-chart id="chart" [dataSource]="getComplaintsData1()" title="Temperature" palette="Harmony Light">
+
+        <dxi-value-axis name="percentage" position="right" [showZero]="true" [tickInterval]="20"
+          [valueMarginsEnabled]="false">
+          <dxo-label [customizeText]="customizeLabelText1"></dxo-label>
+          <dxi-constant-line [value]="80" color="#fc3535" dashStyle="dash" [width]="2">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-constant-line>
+        </dxi-value-axis>
+
+
+        <dxo-common-series-settings argumentField="complaint">
+        </dxo-common-series-settings>
+
+        <dxi-series type="spline" valueField="cumulativePercent" axis="percentage" name="temperature" color="red">
+        </dxi-series>
+        <dxo-legend verticalAlignment="top" horizontalAlignment="center">
+        </dxo-legend>
+      </dx-chart>
+    </div>
+  </div>
+
+  <div class="tables-wrapper" >
+   <div style="width: 50%;">
+    <app-table [data]="SchedulerdataSource" [disableCrudAction]="true"  [title]="'Schedulers'">
+    </app-table>
+   </div>
+   <div style="width: 50%;">
+    <app-table [data]="AlertdataSource" [disableCrudAction]="true"  [title]="'Alerts'">
+    </app-table>
+   </div>
+
+  </div>
+
+
+</div>
+

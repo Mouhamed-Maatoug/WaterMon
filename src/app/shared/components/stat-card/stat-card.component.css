@@ -1,0 +1,57 @@
+.card {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  justify-content: start;
+  position: relative;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+
+}
+
+.description {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.card-icon {
+  padding: 10px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+
+}
+
+.status {
+  /* background-color: red; */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: var(--green);
+}
+
+.toggle-btn mat-icon{
+  font-size: 1.7rem;
+  width: 30px;
+  height: 30px;
+
+}

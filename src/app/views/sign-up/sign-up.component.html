@@ -1,0 +1,69 @@
+<div class="mat-elevation-z8" tabindex="0">
+  <div class="login-container">
+    <div class="left">
+      <div class="logo">
+        <img src="../../../assets/images/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="right">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-title>Create accompt</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="form">
+           <div class="formFiledAligne">
+            <mat-form-field appearance="outline" >
+              <mat-label>FirstName</mat-label>
+              <input matInput [formControl]="firstName"  placeholder="firstName" required/>
+              <mat-error>{{getErrorMessage(firstName)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+              <mat-label>LastName</mat-label>
+              <input matInput placeholder="lastName" [formControl]="lastName" required>
+              <mat-error>{{getErrorMessage(lastName)}}</mat-error>
+
+            </mat-form-field>
+          </div>
+          <mat-form-field appearance="outline" >
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="lastName" [formControl]="email" required>
+            <mat-error>{{getErrorMessage(email)}}</mat-error>
+          </mat-form-field>
+            <mat-form-field appearance="outline" >
+              <mat-label>Phone</mat-label>
+              <span matPrefix>+216 &nbsp;</span>
+              <input matInput placeholder="phone" [formControl]="phone" required>
+              <mat-error>{{getErrorMessage(phone)}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password ">
+              <mat-error>{{getErrorMessage(password)}}</mat-error>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>confirm password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" [formControl]="confirmedPassword ">
+              <mat-error>{{getErrorMessage(confirmedPassword)}}</mat-error>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+
+
+
+              <button class="login-btn" mat-button (click)="signIn()">Sign up</button>
+              <a class="create-accoumpt" href="/signUp"  >Create an account</a>
+          </div>
+        </mat-card-content>
+
+        <!-- <mat-card-footer> Footer </mat-card-footer> -->
+      </mat-card>
+    </div>
+  </div>
+</div>

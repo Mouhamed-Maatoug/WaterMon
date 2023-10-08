@@ -1,0 +1,49 @@
+.login-container{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+.left{
+  width: 50%;
+  height: 100%;
+  padding: 30px 100px;
+}
+.logo img{
+  width: 200px;
+}
+.right{
+  width: 50%;
+  height: 100%;
+  background-image: url('../../../assets/images/bg2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+mat-card{
+  width: 500px;
+  padding: 20px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.formFiledAligne{
+  display: flex;
+  gap: 10px;
+}
+.login-btn{
+  width: 100%;
+  background-color: var(--green-light);
+  color: #ffff !important;
+}
+.create-accoumpt{
+text-align: center;
+text-decoration: none;
+}

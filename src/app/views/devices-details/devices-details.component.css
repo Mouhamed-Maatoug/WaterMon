@@ -1,0 +1,15 @@
+.top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  /* padding: 15px; */
+}
+.tables-wrapper{
+  margin: 20px 0px;
+    display: flex;
+    gap: 20px;
+
+}
+

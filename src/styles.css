@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+/* ***********************common colors****************************** */
+:root{
+    --green : #2b5227;
+    --green-clair : #355932;
+    --green-light :#6ebe47 ;
+    --gray-light: #ecefeb;
+    --gray-clair: #f1f1f1;
+    --gray-mat: #cecece
+
+
+}
+.container{
+    padding: 30px;
+}
+.view-bg{
+    background-color: #fff;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.content-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

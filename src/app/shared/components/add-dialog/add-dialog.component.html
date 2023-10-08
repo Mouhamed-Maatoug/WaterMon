@@ -1,0 +1,77 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>New {{layoutTitle | removeLastLetter}}</mat-card-title>
+  </mat-card-header>
+  <form>
+    <mat-card-content>
+      <div class="form-template">
+
+        <div *ngFor="let columnName of columnsName">
+          <mat-form-field appearance="outline" class="columnName"
+            *ngIf="columnName !== 'id' && columnName !== 'permisionlevel' && columnName !== 'date' "
+            [style.display]="columnName == 'id'? 'none' : ''"
+            >
+            <mat-label>{{columnName}}</mat-label>
+            <input matInput #input  />
+          </mat-form-field>
+          <mat-form-field appearance="outline" *ngIf="columnName == 'date' ">
+            <mat-label>{{columnName}}</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+
+        </div>
+
+      </div>
+      <div class="perissionLevel"  *ngIf="isPermissionEnabledVar"   >
+        <Ul class="permision"  >
+          <div style="display: flex ; justify-content: space-between; align-items: center;">
+            <div >Zones : </div>
+           <div>
+            <mat-checkbox>Write</mat-checkbox>
+            <mat-checkbox>Read</mat-checkbox>
+           </div>
+          </div>
+          <div style="display: flex ; justify-content: space-between; align-items: center;">
+            <div >Devices : </div>
+           <div>
+            <mat-checkbox>Write</mat-checkbox>
+            <mat-checkbox>Read</mat-checkbox>
+           </div>
+          </div>
+          <div style="display: flex ; justify-content: space-between; align-items: center;">
+            <div >Users : </div>
+           <div>
+            <mat-checkbox>Write</mat-checkbox>
+            <mat-checkbox>Read</mat-checkbox>
+           </div>
+          </div>
+          <div style="display: flex ; justify-content: space-between; align-items: center;">
+            <div >Alerts : </div>
+           <div>
+            <mat-checkbox>Write</mat-checkbox>
+            <mat-checkbox>Read</mat-checkbox>
+           </div>
+          </div>
+          <div style="display: flex ; justify-content: space-between; align-items: center;">
+            <div >Schelur : </div>
+           <div>
+            <mat-checkbox>Write</mat-checkbox>
+            <mat-checkbox>Read</mat-checkbox>
+           </div>
+          </div>
+
+
+        </Ul>
+      </div>
+      <div class="action">
+        <button mat-stroked-button (click)="close()" color="warn">close</button>
+        <button mat-stroked-button style="background-color: var(--green-light); color: #ffff;">submit</button>
+      </div>
+    </mat-card-content>
+
+  </form>
+</mat-card>

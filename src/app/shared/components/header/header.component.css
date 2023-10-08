@@ -1,0 +1,20 @@
+.header{
+    background-color: #fff;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+mat-icon{
+    color: #848484 ;
+}
+.person{
+    background-color: var(--gray-mat); 
+}

@@ -1,0 +1,15 @@
+<div class="card content-center" #card>
+  <div class="content">
+    <mat-icon class="card-icon">{{ icon }}</mat-icon>
+    <div class="description">
+      <h2 style="margin: 0">{{ title }}</h2>
+      <p>{{ value }}</p>
+      <div *ngIf="enableStatus">
+        <div class="status" #status></div>
+        <button mat-icon-button class="toggle-btn"(click)="toggleStatus()" >
+          <mat-icon>{{statusBtnIcon}}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
