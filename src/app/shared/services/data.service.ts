@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Device } from 'src/app/models/device';
 import { User } from 'src/app/models/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,13 @@ public Users : User[]= [
   new User(0,'lyly' , 'cat' , 'lylycat@gamail.com', 29272307 ),
 ]
 
-  constructor(private http  : HttpClient) { }
+  constructor(private http  : HttpClient ,  private auth : LoginService) { }
 public getData<T>(api : string): Observable<T> {
-  return this.http.get<T>(api)
+  let headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'JWT '+ this.auth.getToken()});
+  const options = { headers: headers };
+  return this.http.get<T>(api ,  options)
 }
 
 

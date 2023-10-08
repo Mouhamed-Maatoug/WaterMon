@@ -17,6 +17,7 @@ export class TableComponent {
   @Input() data!: any[];
   @Input() column!: string[];
   @Input() displayFiled!: string[];
+  @Input() columnsName: string[]=[];
   @Input() disableCrudAction: boolean = false;
   @Input() title: string = 'title is a proprity binding of table';
   @Input() width : string = '100%'
@@ -25,7 +26,7 @@ export class TableComponent {
 
   @Input() enableOpenPopUpButton : boolean = true
 
-  public columnsName!: any[];
+  // public columnsName!: any[];
   public displayedColumns!: string[];
   public dataForms : {column : string , type : string}[] = []
   public dataSource!: MatTableDataSource<any>;
@@ -38,14 +39,12 @@ export class TableComponent {
     private dialog : MatDialog,
     private sharedDataService : DataService
     ){
+      console.log('loadData')
 
-      this.sharedDataService.getData(this.layouApi).subscribe(data => {
-        console.log("retrivetData : " , data)
-      })
 
   }
   ngOnInit() {
-    this.pickListByColumnName();
+    // this.pickListByColumnName();
   }
   ngAfterViewInit() {
     this.dataSource = new MatTableDataSource<any>(this.data);
@@ -56,25 +55,26 @@ export class TableComponent {
 
 
 
-  private pickListByColumnName() {
-    let firstObjectOfData = this.data[0];
-    let columns = Object.keys(firstObjectOfData);
-    columns.map(columnName => this.dataForms = [...this.dataForms , {column : columnName , type : typeof(columnName)}] )  ;
-    if (this.displayFiled) {
-      this.displayedColumns = this.displayFiled;
-      if (!this.disableCrudAction) {
-        this.displayedColumns = [...this.displayedColumns, 'action'];
-      }
+  // private pickListByColumnName() {
+  //   console.log('pickData :')
+  //   let firstObjectOfData = this.data[0];
+  //   let columns = Object.keys(firstObjectOfData);
+  //   columns.map(columnName => this.dataForms = [...this.dataForms , {column : columnName , type : typeof(columnName)}] )  ;
+  //   if (this.displayFiled) {
+  //     this.displayedColumns = this.displayFiled;
+  //     if (!this.disableCrudAction) {
+  //       this.displayedColumns = [...this.displayedColumns, 'action'];
+  //     }
 
-    } else {
-      this.displayedColumns = columns;
-      if (!this.disableCrudAction) {
-        this.displayedColumns = [...this.displayedColumns, 'action'];
-      }
-    }
-    this.columnsName = columns;
-    console.log(this.columnsName)
-  }
+  //   } else {
+  //     this.displayedColumns = columns;
+  //     if (!this.disableCrudAction) {
+  //       this.displayedColumns = [...this.displayedColumns, 'action'];
+  //     }
+  //   }
+  //   this.columnsName = columns;
+  //   console.log( 'column nmae :' + this.columnsName )
+  // }
   applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
