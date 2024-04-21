@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 50%;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action button {
+  background-color: var(--green-light);
+  color: #fff;
+}
+
+
+th {
+  width: 25%;
+  background-color: var(--gray-clair) ! important;
+}
+
+.mat-mdc-cell {
+  border-bottom-color: var(--gray-clair) ! important;
+}
+

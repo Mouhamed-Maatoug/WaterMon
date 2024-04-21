@@ -18,6 +18,15 @@ import { DevicesDetailsComponent } from './views/devices-details/devices-details
 import { DxChartModule } from 'devextreme-angular';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule, MatIconAnchor } from '@angular/material/button';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -45,6 +54,15 @@ import { FormsModule } from '@angular/forms';
     UsersComponent,
     FormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatPaginatorModule  ,
+    MatInputModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatCardModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable ,EMPTY } from 'rxjs';
 import { LoginService } from './login.service';
-import { Device } from './model/device';
-import { Zone } from './model/zone';
+import { Zone } from 'src/app/models/zone';
+import { Device } from 'devextreme/core/devices';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class ZoneService {
         'Content-Type': 'application/json',
         'Authorization': 'JWT '+this.auth.getToken()});
         let options = { headers: headers };
-        return this.http.get<Zone[]>(this.url + 'zones' , options) ; 
+        return this.http.get<Zone[]>(this.url + 'zones' , options) ;
     }
     console.log("not logged in" );
     return EMPTY ;
@@ -34,9 +35,9 @@ export class ZoneService {
       'Content-Type': 'application/json',
       'Authorization': 'JWT '+this.auth.getToken()});
       let options = { headers: headers };
-      return this.http.get<Device[]>(this.url + 'zones/'+zoneid+'/devices' , options) ; 
+      return this.http.get<Device[]>(this.url + 'zones/'+zoneid+'/devices' , options) ;
   }
-  
+
   getZoneById(id : String) : Observable<Zone>
   {
     let headers = new HttpHeaders({
@@ -66,6 +67,6 @@ export class ZoneService {
 
   update(id : String)
   {
-    
+
   }
 }
